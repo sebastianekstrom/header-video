@@ -96,12 +96,7 @@ var MastheadVideo = (function ($, document) {
     };
 
     var isMobile = function () {
-        if($(window).width() < 900 && Modernizr.touch) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        $(window).width() < 900 && Modernizr.touch ? true : false;
     }
 
     return {
