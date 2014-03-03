@@ -9,7 +9,6 @@ var MastheadVideo = (function ($, document) {
 
     var init = function(options){
         settings = $.extend(settings, options);
-
         getVideoDetails();
         setFluidContainer();
         bindClickAction();
@@ -66,7 +65,7 @@ var MastheadVideo = (function ($, document) {
     var appendTeaserVideo = function() {
         if(Modernizr.video && !isMobile()) {
             var source = videoDetails.teaser,
-                html = '<video autoplay="true" loop="loop" muted id="teaser-video"><source src="'+source+'.mp4" type="video/mp4"><source src="'+source+'.ogv" type="video/ogg"></video>';
+                html = '<video autoplay="true" loop="loop" muted id="teaser-video" class="teaser-video"><source src="'+source+'.mp4" type="video/mp4"><source src="'+source+'.ogv" type="video/ogg"></video>';
             settings.container.append(html);
         }
         
@@ -78,6 +77,9 @@ var MastheadVideo = (function ($, document) {
         }
         else if(videoDetails.provider === 'vimeo') {
             var html = '<iframe src="//player.vimeo.com/video/'+videoDetails.id+'?title=0&amp;byline=0&amp;portrait=0&amp;color=3d96d2&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+        }
+        else if(videoDetails.provider === 'html5') {
+            var html = '<video autoplay="true" loop="loop" id="video"><source src="'+videoDetails.id+'.mp4" type="video/mp4"><source src="'+videoDetails.id+'.ogv" type="video/ogg"></video>';
         }
         return html;
     };

@@ -19,8 +19,17 @@ p {
 
 h1, h2, h3 {
   font-weight: 700;
-  font-size: 4em;
   margin-bottom: .35em;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 1em;
 }
 
 .masthead-container {
@@ -41,7 +50,7 @@ iframe {
   width: 100%;
 }
 
-video {
+.teaser-video {
   width: 100%;
   height: auto; 
 }
@@ -55,17 +64,25 @@ img {
   z-index: 5;
   position: absolute;
   background: #222;
-  padding: 1em 3em;
   text-align: center;
   color: white;
   text-decoration: none;
   width: 200px;
+  height: 60px;
   top: 0;
   z-index: 5;
   left: 50%;
+  line-height: 60px;
   margin-left: -100px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
+  margin-top: -30px;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  transition: background .3s;
+}
+
+.video-trigger:hover {
+  background: #363636;
 }
 
 .container {
