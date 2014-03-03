@@ -4,21 +4,21 @@ var MastheadVideo = (function ($, document) {
         container: $('.masthead-container'),
         masthead: $('.masthead'),
         videoTrigger: $("#video-trigger"),
-        autoPlay: false
+        autoPlayVideo: false
     }
 
     var init = function(options){
         settings = $.extend(settings, options);
 
         getVideoDetails();
-        bindClickAction();
         setFluidContainer();
-
+        bindClickAction();
+        
         if(videoDetails.teaser) {
             appendTeaserVideo();
         }
 
-        if(settings.autoPlay) {
+        if(settings.autoPlayVideo) {
             appendFrame();
         }
     }
@@ -97,10 +97,10 @@ var MastheadVideo = (function ($, document) {
 
     var isMobile = function () {
         if($(window).width() < 900 && Modernizr.touch) {
-            return false;
+            return true;
         }
         else {
-            return true;
+            return false;
         }
     }
 

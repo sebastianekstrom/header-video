@@ -11,117 +11,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-    <style>
-    * {
-      margin: 0;
-      padding: 0;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Source Sans Pro', sans-serif;
-      font-weight: 400;
-      font-size: 100%;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-    }
-
-    h1, h2, h3 {
-      font-weight: 700;
-      font-size: 4em;
-      margin-bottom: .35em;
-    }
-
-    .masthead-container {
-      position: relative;
-      overflow: hidden;
-    }
-
-    iframe, video {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-
-    iframe {
-      height: 100%;
-      width: 100%;
-    }
-
-    video {
-      width: 100%;
-      height: auto; 
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    .video-trigger {
-      z-index: 5;
-      position: absolute;
-      background: #222;
-      padding: 1em 3em;
-      text-align: center;
-      color: white;
-      text-decoration: none;
-      width: 200px;
-      top: 0;
-      z-index: 5;
-      left: 50%;
-      margin-left: -100px;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-    }
-
-    .container {
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 2em;
-    }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <div class="masthead-container">
+    <img src="img/masthead.jpg" class="masthead" data-video-src="87701971" data-teaser-source="video/masthead-teaser" data-provider="Vimeo" data-video-width="500" data-video-height="281">
+      <a href="http://www.youtube.com/watch?v=l9zWxrnG9Zg" class="video-trigger" id="video-trigger">Play video</a>
+  </div>
 
-
-<div class="masthead-container">
-  <img src="masthead.jpg" class="masthead" data-video-src="87701971" data-teaser-source="masthead-teaser" data-provider="Vimeo" data-video-width="500" data-video-height="281">
-    <a href="http://www.youtube.com/watch?v=l9zWxrnG9Zg" class="video-trigger" id="video-trigger">Play video</a>
-</div>
-
-<div class="container">
-  <h2>Welcome!</h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, accusamus, eius aperiam velit modi obcaecati aliquid fugiat quisquam corporis consequatur neque nemo magnam quas molestias nostrum ex a voluptatibus consectetur praesentium pariatur nobis tempore hic ea mollitia in illum deserunt accusantium natus distinctio quae magni reprehenderit alias ipsa rerum quos.
-  </p>
-  <p>
-    Ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, veritatis, laudantium officia maxime tempora molestias est sunt iure vel blanditiis reprehenderit repellat amet dolorem eaque alias beatae nihil aliquid officiis possimus labore consectetur neque dolorum itaque libero accusantium odio.
-  </p>
-</div>
+  <div class="container">
+    <h2>Welcome!</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, accusamus, eius aperiam velit modi obcaecati aliquid fugiat quisquam corporis consequatur neque nemo magnam quas molestias nostrum ex a voluptatibus consectetur praesentium pariatur nobis tempore hic ea mollitia in illum deserunt accusantium natus distinctio quae magni reprehenderit alias ipsa rerum quos.
+    </p>
+    <p>
+      Ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, veritatis, laudantium officia maxime tempora molestias est sunt iure vel blanditiis reprehenderit repellat amet dolorem eaque alias beatae nihil aliquid officiis possimus labore consectetur neque dolorum itaque libero accusantium odio.
+    </p>
+  </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="modernizr.js"></script>
-<script src="script.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/script.js"></script>
 <script>
 $(document).ready(function() {
+
    MastheadVideo.init({
       container: $('.masthead-container'),
       masthead: $('.masthead'),
       videoTrigger: $("#video-trigger"),
-      autoPlay: false
+      autoPlayVideo: false
     });    
-});
 
+});
 </script>
 </body>
 </html>
