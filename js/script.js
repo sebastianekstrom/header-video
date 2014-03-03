@@ -1,8 +1,8 @@
-var MastheadVideo = (function ($, document) {
+var HeaderVideo = (function ($, document) {
     
     var settings = {
-        container: $('.masthead-container'),
-        masthead: $('.masthead'),
+        container: $('.header-container'),
+        header: $('.header'),
         videoTrigger: $("#video-trigger"),
         autoPlayVideo: false
     }
@@ -24,11 +24,11 @@ var MastheadVideo = (function ($, document) {
 
     var getVideoDetails = function() {
         videoDetails = {
-            id: settings.masthead.attr('data-video-src'),
-            teaser: settings.masthead.attr('data-teaser-source'),
-            provider: settings.masthead.attr('data-provider').toLowerCase(),
-            videoHeight: settings.masthead.attr('data-video-height'),
-            videoWidth: settings.masthead.attr('data-video-width')
+            id: settings.header.attr('data-video-src'),
+            teaser: settings.header.attr('data-teaser-source'),
+            provider: settings.header.attr('data-provider').toLowerCase(),
+            videoHeight: settings.header.attr('data-video-height'),
+            videoWidth: settings.header.attr('data-video-width')
         }
         return videoDetails;
     };
@@ -68,7 +68,6 @@ var MastheadVideo = (function ($, document) {
                 html = '<video autoplay="true" loop="loop" muted id="teaser-video" class="teaser-video"><source src="'+source+'.mp4" type="video/mp4"><source src="'+source+'.ogv" type="video/ogg"></video>';
             settings.container.append(html);
         }
-        
     };
     
     var createFrame = function() {
@@ -85,7 +84,7 @@ var MastheadVideo = (function ($, document) {
     };
 
     var appendFrame = function() {
-        settings.masthead.hide();
+        settings.header.hide();
         settings.container.append(createFrame());
         removePlayButton();
         $('#teaser-video').hide();

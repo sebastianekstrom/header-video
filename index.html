@@ -15,8 +15,8 @@
 </head>
 <body>
 
-  <div class="masthead-container">
-    <img src="img/masthead.jpg" class="masthead" data-video-src="87701971" data-teaser-source="video/masthead-teaser" data-provider="Vimeo" data-video-width="500" data-video-height="281">
+  <div class="header">
+    <img src="img/masthead.jpg" class="header-media" data-video-src="87701971" data-teaser-source="video/masthead-teaser" data-provider="Vimeo" data-video-width="500" data-video-height="281">
       <a href="http://www.youtube.com/watch?v=l9zWxrnG9Zg" class="video-trigger" id="video-trigger">Play video</a>
   </div>
 
@@ -47,9 +47,9 @@
 <script>
 $(document).ready(function() {
 
-   MastheadVideo.init({
-      container: $('.masthead-container'),
-      masthead: $('.masthead'),
+   HeaderVideo.init({
+      container: $('.header'),
+      header: $('.header-media'),
       videoTrigger: $("#video-trigger"),
       autoPlayVideo: false
     });    

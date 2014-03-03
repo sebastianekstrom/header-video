@@ -1,3 +1,39 @@
+/* ====================================
+   Demo specific styling
+   ==================================== */
+
+.header {
+  position: relative;
+  overflow: hidden;
+}
+
+iframe, video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.teaser-video {
+  width: 100%;
+  height: auto; 
+}
+
+.header-media {
+  width: 100%;
+  height: auto;
+}
+
+/* ====================================
+   Just making stuff pretty
+   ==================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -30,34 +66,6 @@ h1 {
 h2 {
   font-size: 2em;
   margin-top: 1em;
-}
-
-.masthead-container {
-  position: relative;
-  overflow: hidden;
-}
-
-iframe, video {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-iframe {
-  height: 100%;
-  width: 100%;
-}
-
-.teaser-video {
-  width: 100%;
-  height: auto; 
-}
-
-img {
-  width: 100%;
-  height: auto;
 }
 
 .video-trigger {
