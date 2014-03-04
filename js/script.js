@@ -1,8 +1,8 @@
 var HeaderVideo = (function ($, document) {
     
     var settings = {
-        container: $('.header-container'),
-        header: $('.header'),
+        container: $('.header-video'),
+        header: $('.header-video--media'),
         videoTrigger: $("#video-trigger"),
         autoPlayVideo: false
     }
@@ -97,7 +97,13 @@ var HeaderVideo = (function ($, document) {
     };
 
     var isMobile = function () {
-        $(window).width() < 900 && Modernizr.touch ? true : false;
+        if($(window).width() < 900 && Modernizr.touch) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 
     return {

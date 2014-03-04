@@ -2,7 +2,7 @@
    Demo specific styling
    ==================================== */
 
-.header {
+.header-video {
   position: relative;
   overflow: hidden;
 }
@@ -25,7 +25,7 @@ iframe {
   height: auto; 
 }
 
-.header-media {
+.header-video--media {
   width: 100%;
   height: auto;
 }
