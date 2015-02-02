@@ -4,6 +4,8 @@ var HeaderVideo = (function ($, document) {
         container: $('.header-video'),
         header: $('.header-video--media'),
         videoTrigger: $("#video-trigger"),
+        videoCloseTrigger: $('#video-close-trigger'),
+        teaserVideo: $('#teaser-video'),
         autoPlayVideo: false
     }
 
@@ -12,6 +14,7 @@ var HeaderVideo = (function ($, document) {
         getVideoDetails();
         setFluidContainer();
         bindClickAction();
+        settings.videoCloseTrigger.hide();
         
         if(videoDetails.teaser) {
             appendTeaserVideo();
@@ -59,6 +62,11 @@ var HeaderVideo = (function ($, document) {
         settings.videoTrigger.on("click", function(e) {
             e.preventDefault();
             appendFrame();
+            settings.videoCloseTrigger.fadeIn();
+        });
+        settings.videoCloseTrigger.on("click", function(e){
+            e.preventDefault();
+            removeFrame();
         });
     };
 
@@ -71,11 +79,12 @@ var HeaderVideo = (function ($, document) {
     };
     
     var createFrame = function() {
+        // Added an ID attribute to be able to remove the video element when the user clicks on the remove button
         if(videoDetails.provider === 'youtube') {
-            var html = '<iframe src="http://www.youtube.com/embed/'+videoDetails.id+'?rel=0&amp;hd=1&autohide=1&showinfo=0&autoplay=1&enablejsapi=1&origin=*" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            var html = '<iframe id="video" src="http://www.youtube.com/embed/'+videoDetails.id+'?rel=0&amp;hd=1&autohide=1&showinfo=0&autoplay=1&enablejsapi=1&origin=*" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
         }
         else if(videoDetails.provider === 'vimeo') {
-            var html = '<iframe src="http://player.vimeo.com/video/'+videoDetails.id+'?title=0&amp;byline=0&amp;portrait=0&amp;color=3d96d2&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            var html = '<iframe id="video" src="http://player.vimeo.com/video/'+videoDetails.id+'?title=0&amp;byline=0&amp;portrait=0&amp;color=3d96d2&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
         }
         else if(videoDetails.provider === 'html5') {
             var html = '<video autoplay="true" loop="loop" id="video"><source src="'+videoDetails.id+'.mp4" type="video/mp4"><source src="'+videoDetails.id+'.ogv" type="video/ogg"></video>';
@@ -87,13 +96,30 @@ var HeaderVideo = (function ($, document) {
         settings.header.hide();
         settings.container.append(createFrame());
         removePlayButton();
-        $('#teaser-video').hide();
+        settings.teaserVideo.hide();
+    };
+
+    var removeFrame = function() {
+        $('#video').remove();
+        settings.teaserVideo.fadeIn();
+        displayPlayButton();
+        removeRemoveButton();
     };
 
     var removePlayButton = function () {
         if(settings.videoTrigger) {
             settings.videoTrigger.fadeOut('slow');
         }
+    };
+
+    var displayPlayButton = function() {
+        if(settings.videoTrigger) {
+            settings.videoTrigger.fadeIn('slow');
+        }
+    };
+
+    var removeRemoveButton = function() {
+        settings.videoCloseTrigger.hide();
     };
 
     var isMobile = function () {

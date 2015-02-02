@@ -97,6 +97,32 @@ h2 {
   background: #363636;
 }
 
+/**
+  Just some basic styling for the closing trigger
+**/
+
+.video-close-trigger {
+  z-index: 99;
+  position: absolute;
+  background: #A61212;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  width: 200px;
+  height: 60px;
+  right: 30px;
+  line-height: 60px;
+  top: 30px;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  transition: background .3s;  
+  border: none;
+}
+.video-close-trigger:hover {
+  background: #363636;
+  cursor: pointer;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
