@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
+    <title>Z63 - Header video</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -16,9 +16,14 @@
 <body>
 
   <div class="header-video">
-    <img src="img/masthead.jpg" class="header-video--media" data-video-src="0CxWLQxvY9g" data-teaser-source="video/masthead-teaser" data-provider="Youtube" data-video-width="500" data-video-height="281">
+    <img src="img/masthead.jpg"
+         class="header-video--media"
+         data-video-src="0CxWLQxvY9g"
+         data-teaser-source="video/masthead-teaser"
+         data-provider="Youtube"
+         data-video-width="500"
+         data-video-height="281">
     <a href="http://vimeo.com/87701971" class="video-trigger" id="video-trigger">Play video</a>
-    <!-- A button element for semantic reasons. ID and class name are the same cause I don't want to use ID's as a CSS selector :) -->
     <button type="button" class="video-close-trigger" id="video-close-trigger">Close video</button>
   </div>
 
@@ -47,16 +52,16 @@
 <script src="js/modernizr.js"></script>
 <script src="js/script.js"></script>
 <script>
-$(document).ready(function() {
+  $(document).ready(function() {
 
-   HeaderVideo.init({
-      container: $('.header-video'),
-      header: $('.header-video--media'),
-      videoTrigger: $("#video-trigger"),
-      autoPlayVideo: false
-    });    
+     HeaderVideo.init({
+        container: $('.header-video'),
+        header: $('.header-video--media'),
+        videoTrigger: $("#video-trigger"),
+        autoPlayVideo: false
+      });    
 
-});
+  });
 </script>
 </body>
 </html>
