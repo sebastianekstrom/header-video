@@ -2,6 +2,7 @@ var HeaderVideo = (function ($, document) {
     
     var settings = {
         container: $('.header-video'),
+        video: '#video',
         header: $('.header-video--media'),
         videoTrigger: $("#video-trigger"),
         videoCloseTrigger: $('#video-close-trigger'),
@@ -100,7 +101,7 @@ var HeaderVideo = (function ($, document) {
     };
 
     var removeFrame = function() {
-        $('#video').remove();
+        $(settings.video).remove();
         settings.teaserVideo.fadeIn();
         displayPlayButton();
         removeRemoveButton();
