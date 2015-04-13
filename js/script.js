@@ -4,7 +4,7 @@ var HeaderVideo = (function ($, document) {
         container: $('.header-video'),
         video: '#video',
         header: $('.header-video--media'),
-        videoTrigger: $("#video-trigger"),
+        videoTrigger: $('#video-trigger'),
         videoCloseTrigger: $('#video-close-trigger'),
         teaserVideo: $('#teaser-video'),
         autoPlayVideo: false
@@ -27,19 +27,19 @@ var HeaderVideo = (function ($, document) {
     };
 
     var bindClickActions = function() {
-        settings.videoTrigger.on("click", function(e) {
+        settings.videoTrigger.on('click', function(e) {
             e.preventDefault();
             appendFrame();
             settings.videoCloseTrigger.fadeIn();
         });
-        settings.videoCloseTrigger.on("click", function(e){
+        settings.videoCloseTrigger.on('click', function(e){
             e.preventDefault();
             removeFrame();
         });
     };
 
     var getVideoDetails = function() {
-        // Get all the data attributes from the HTML container and return them as an object for easy data retrieval
+        //Get all the data attributes from the HTML container and return them as an object for easy data retrieval
         videoDetails = {
             id: settings.header.attr('data-video-src'),
             teaser: settings.header.attr('data-teaser-source'),
@@ -53,13 +53,13 @@ var HeaderVideo = (function ($, document) {
     var setFluidContainer = function () {
         settings.container.data('aspectRatio', videoDetails.videoHeight / videoDetails.videoWidth);
 
-        $(window).resize(function(){
+        $(window).resize(function() {
             var winWidth = $(window).width(),
                 winHeight = $(window).height();
 
             settings.container
-                .width(Math.ceil(winWidth)) // Round up to the nearest pixel value to prevent breaking of layout
-                .height(Math.ceil(winWidth * settings.container.data('aspectRatio'))); // Set the videos aspect ratio, see https://css-tricks.com/fluid-width-youtube-videos/
+                .width(Math.ceil(winWidth)) //Round up to the nearest pixel value to prevent breaking of layout
+                .height(Math.ceil(winWidth * settings.container.data('aspectRatio'))); //Set the videos aspect ratio, see https://css-tricks.com/fluid-width-youtube-videos/
 
             if(winHeight < settings.container.height()) {
                 settings.container
@@ -67,7 +67,7 @@ var HeaderVideo = (function ($, document) {
                     .height(Math.ceil(winHeight));
             }
 
-        }).trigger('resize'); // Trigger resize to force it to run on page load as well
+        }).trigger('resize'); //Trigger resize to force it to run on page load as well
 
     };
 
@@ -80,7 +80,7 @@ var HeaderVideo = (function ($, document) {
     };
     
     var createFrame = function() {
-        // Added an ID attribute to be able to remove the video element when the user clicks on the remove button
+        //Added an ID attribute to be able to remove the video element when the user clicks on the remove button
         if(videoDetails.provider === 'youtube') {
             var html = '<iframe id="video" src="http://www.youtube.com/embed/'+videoDetails.id+'?rel=0&amp;hd=1&autohide=1&showinfo=0&autoplay=1&enablejsapi=1&origin=*" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
         }
@@ -124,8 +124,8 @@ var HeaderVideo = (function ($, document) {
     };
 
     var isMobile = function () {
-        // A super basic way of detecting mobile devices. Should be extended to a more
-        // fool proof way in a production enviroment.
+        //A super basic way of detecting mobile devices. Should be extended to a more
+        //fool proof way in a production enviroment.
         return Modernizr.touch;
     }
 
