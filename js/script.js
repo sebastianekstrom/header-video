@@ -45,13 +45,13 @@ var HeaderVideo = (function ($, document) {
                 winHeight = $(window).height();
 
             settings.container
-                .width(winWidth)
-                .height(winWidth * settings.container.data('aspectRatio'));
+                .width(Math.ceil(winWidth))
+                .height(Math.ceil(winWidth * settings.container.data('aspectRatio')));
 
             if(winHeight < settings.container.height()) {
                 settings.container
-                    .width(winWidth)
-                    .height(winHeight);
+                    .width(Math.ceil(winWidth))
+                    .height(Math.ceil(winHeight));
             }
 
         }).trigger('resize');
