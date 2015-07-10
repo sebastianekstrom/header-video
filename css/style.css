@@ -24,12 +24,12 @@ video {
   width: 100%;
 }
 
-.teaser-video {
+.header-video__teaser-video {
   width: 100%;
   height: auto; 
 }
 
-.header-video--media {
+.header-video__media {
   width: 100%;
   height: auto;
 }
@@ -72,53 +72,51 @@ h2 {
   margin-top: 1em;
 }
 
-.video-trigger {
+.header-video__play-trigger {
   z-index: 5;
   position: absolute;
-  background: #222;
+  background: rgba(0,0,0,.3);
   text-align: center;
   color: white;
   text-decoration: none;
-  width: 200px;
-  height: 60px;
-  top: 0;
+  padding: 1.5em 3em;
   z-index: 5;
   left: 50%;
-  line-height: 60px;
-  margin-left: -100px;
   top: 50%;
-  margin-top: -30px;
-  -webkit-transition: background .3s;
-  -moz-transition: background .3s;
-  transition: background .3s;
+  border-radius: 10px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: background .5s;
+  -moz-transition: background .5s;
+  transition: background .5s;
 }
 
-.video-trigger:hover {
-  background: #363636;
+.header-video__play-trigger:hover {
+  background: rgba(0,0,0,.5);
 }
 
 /**
   Just some basic styling for the closing trigger
 **/
 
-.video-close-trigger {
+.header-video__close-trigger {
   z-index: 99;
   position: absolute;
   background: #A61212;
   text-align: center;
   color: white;
   text-decoration: none;
-  width: 200px;
-  height: 60px;
+  padding: 2em 3em;
+  border-radius: 10px;
   right: 30px;
-  line-height: 60px;
   top: 30px;
   -webkit-transition: background .3s;
   -moz-transition: background .3s;
   transition: background .3s;  
   border: none;
 }
-.video-close-trigger:hover {
+.header-video__close-trigger:hover {
   background: #363636;
   cursor: pointer;
 }
@@ -126,5 +124,5 @@ h2 {
 .container {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 2em;
+  padding: 10em 2em 10em 2em;
 }
