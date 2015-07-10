@@ -7,7 +7,8 @@
   overflow: hidden;
 }
 
-iframe, video {
+.header-video iframe,
+.header-video video {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -15,12 +16,12 @@ iframe, video {
   right: 0;
 }
 
-iframe {
+.header-video iframe {
   height: 100%;
   width: 100%;
 }
 
-video {
+.header-video video {
   width: 100%;
 }
 

@@ -8,16 +8,16 @@
 'use strict';
 
 var HeaderVideo = function(settings) {
+    if (settings.element.length === 0) {
+        return;
+    }
+    this.init(settings);
+};
+
+HeaderVideo.prototype.init = function(settings) {
     this.$element = $(settings.element);
     this.settings = settings;
     this.videoDetails = this.getVideoDetails();
-    this.init();
-};
-
-HeaderVideo.prototype.init = function() {
-    if (this.settings.element.length === 0) {
-        return;
-    }
 
     $(this.settings.closeTrigger).hide();
     this.setFluidContainer();
@@ -54,8 +54,8 @@ HeaderVideo.prototype.removeIframe = function() {
 };
 
 HeaderVideo.prototype.appendTeaserVideo = function() {
-    var source = this.videoDetails.teaser,
-        html = '<video autoplay="true" loop="true" muted id="header-video__teaser-video" class="header-video__teaser-video"><source src="'+source+'.webm" type="video/mp4"><source src="'+source+'.mp4" type="video/mp4"></video>';
+    var source = this.videoDetails.teaser;
+    var html = '<video autoplay="true" loop="true" muted id="header-video__teaser-video" class="header-video__teaser-video"><source src="'+source+'.webm" type="video/mp4"><source src="'+source+'.mp4" type="video/mp4"></video>';
     this.$element.append(html);
 };
 
